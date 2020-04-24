@@ -1,0 +1,11 @@
+body {
+    background-color: lightgrey;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1241px;
+    height: 900px;
+}
