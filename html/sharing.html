@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <title>Death Clock</title>
+    <head><link rel="stylesheet" type="text/css" href="../style/p3.css"></head>
+    <h1>You going to die in</h1>
+    <p id="count"></p>
+    <script>
+        let timer = 60;
+        let interVal = setInterval(function() {
+            timer --;
+            document.getElementById("count").innerHTML = timer;
+            if(timer <= 0) {
+                alert("You are dead.")
+            }
+        }, 1000)
+        setTimeout(function (argument) {
+            clearInterval(interVal);
+        }, 60900);
+    </script>
+</body>
+</html>
