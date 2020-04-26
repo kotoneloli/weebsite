@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <title>LIST</title>
+    <head><link rel="stylesheet" type="text/css" href="../style/todo.css"></head>
+    <h1>To Do List</h1>
+    <p>
+        <label onclick="ticker(1)" id="t1">WORKING</label><br>
+        <textarea id="first">Enter Text Here!</textarea>
+    </p>
+    <p>
+    <label onclick="ticker(2)" id="t2">WORKING</label><br>
+        <textarea id="sec">Enter Text Here!</textarea>
+    </p>
+    <p>
+        <label onclick="ticker(3)" id="t3">WORKING</label><br>
+            <textarea id="trd">Enter Text Here!</textarea>
+    </p>
+    <p>
+        <label onclick="ticker(4)" id="t4">WORKING</label><br>
+            <textarea id="foR">Enter Text Here!</textarea>
+    </p>
+    <p>
+        <label onclick="ticker(5)" id="t5">WORKING</label><br>
+            <textarea id="fi">Enter Text Here!</textarea>
+    </p>
+    <p>
+        <label onclick="ticker(6)" id="t6">WORKING</label><br>
+            <textarea id="sx">Enter Text Here!</textarea>
+    </p>
+    <p>
+        <label onclick="ticker(7)" id="t7">WORKING</label><br>
+            <textarea id="sv">Enter Text Here!</textarea>
+    </p>
+    <p>
+        <label onclick="ticker(8)" id="t8">WORKING</label><br>
+            <textarea id="egt">Enter Text Here!</textarea>
+    </p>
+    <p1 id="save" onclick="save()">Save Text</p1>
+    <p1 id="load" onclick="load()">Load Text</p1>
+    <script>
+        function ticker(a) {
+            a = `t${a}`;
+            var stateMent = document.getElementById(a);
+            if (stateMent.innerHTML == "WORKING") {
+                stateMent.innerHTML = "DONE";
+            } else {
+                stateMent.innerHTML = "WORKING";
+            }
+        }
+        function save() {
+            var first = document.getElementById("first").value;
+            localStorage.setItem("first", first);
+            var t1 = document.getElementById("t1").innerHTML;
+            localStorage.setItem("t1", t1);
+            var sec = document.getElementById("sec").value;
+            localStorage.setItem("sec", sec);
+            var t2 = document.getElementById("t2").innerHTML;
+            localStorage.setItem("t2", t2);
+            var trd = document.getElementById("trd").value;
+            localStorage.setItem("trd", trd);
+            var t3 = document.getElementById("t3").innerHTML;
+            localStorage.setItem("t3", t3);
+            var foR = document.getElementById("foR").value;
+            localStorage.setItem("foR", foR);
+            var t4 = document.getElementById("t4").innerHTML;
+            localStorage.setItem("t4", t4);
+            var fi = document.getElementById("fi").value;
+            localStorage.setItem("fi", fi);
+            var t5 = document.getElementById("t5").innerHTML;
+            localStorage.setItem("t5", t5);
+            var sx = document.getElementById("sx").value;
+            localStorage.setItem("sx", sx);
+            var t6 = document.getElementById("t6").innerHTML;
+            localStorage.setItem("t6", t6);
+            var sv = document.getElementById("sv").value;
+            localStorage.setItem("sv", sv);
+            var t7 = document.getElementById("t7").innerHTML;
+            localStorage.setItem("t7", t7);
+            var egt = document.getElementById("egt").value;
+            localStorage.setItem("egt", egt);
+            var t8 = document.getElementById("t8").innerHTML;
+            localStorage.setItem("t8", t8);
+        }
+
+        function load() {
+            let x = "first"
+            let b = "t1"
+            let c = "sec"
+            let d = "t2"
+            let e = "trd"
+            let f = "t3"
+            let g = "foR"
+            let h = "t4"
+            let i = "fi"
+            let j = "t5"
+            let k = "sx"
+            let l = "t6"
+            let m = "sv"
+            let n = "t7"
+            let o = "egt"
+            let p = "t8"
+            first = localStorage.getItem(x);
+            document.getElementById(x).value = first;
+            t1 = localStorage.getItem(b);
+            document.getElementById(b).innerHTML = t1;
+            sec = localStorage.getItem(c);
+            document.getElementById(c).value = sec;
+            t2 = localStorage.getItem(d);
+            document.getElementById(d).innerHTML = t2;
+            trd = localStorage.getItem(e);
+            document.getElementById(e).value = trd;
+            t3 = localStorage.getItem(f);
+            document.getElementById(f).innerHTML = t3;
+            foR = localStorage.getItem(g);
+            document.getElementById(g).value = foR;
+            t4 = localStorage.getItem(h);
+            document.getElementById(h).innerHTML = t4;
+            fi = localStorage.getItem(i);
+            document.getElementById(i).value = fi;
+            t5 = localStorage.getItem(j);
+            document.getElementById(j).innerHTML = t5;
+            sx = localStorage.getItem(k);
+            document.getElementById(k).value = sx;
+            t6 = localStorage.getItem(l);
+            document.getElementById(l).innerHTML = t6;
+            sv = localStorage.getItem(m);
+            document.getElementById(m).value = sv;
+            t7 = localStorage.getItem(n);
+            document.getElementById(n).innerHTML = t7;
+            egt = localStorage.getItem(o);
+            document.getElementById(o).value = egt;
+            t8 = localStorage.getItem(p);
+            document.getElementById(p).innerHTML = t8;
+        }
+    </script>
+</body>
+</html>

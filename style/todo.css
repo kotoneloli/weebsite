@@ -1,0 +1,21 @@
+body {
+    background-color: rgb(255, 187, 0);
+}
+
+h1 {
+    font-size: 30px;
+    color: rgb(0, 174, 255);
+}
+
+p {
+    color: rgb(255, 123, 0);
+    font-size: 26px;
+    float: left;
+}
+
+p1 {
+    color: red;
+    font-size: 40px;
+    float: left;
+    padding: 20px;
+}
