@@ -2,7 +2,7 @@
 <html>
     <title>Yue</title>
     <head><link rel="stylesheet" type="text/css" href="../style/p5.css"></head>
-    <body onload="once()">
+    <body>
         <nav>
             <ul>
                 <li><a href="../index.html">Main Page</a></li>
@@ -24,9 +24,12 @@
 
         <p id="shop" onclick="buy()">50 Clicks</p>
 
+        <p id="auto" onclick="auto()">Auto Clicker(500 Clicks)</p>
+
         <script>
-            var count = 10;
+            var count = 0;
             var x = 1;
+            var autoAmount = 0;
 
             function main() {
                 count += x;
@@ -44,9 +47,24 @@
                 }
             }
 
+            function auto() {
+                if (count >= 500) {
+                count -= 500;
+                autoAmount ++;
+                var autoClick = setInterval(function() {
+                    count ++;
+                    document.getElementById("count").innerHTML = "Count: " + count;
+                }, 1000);
+                document.getElementById("auto").innerHTML = "Auto Clicker(500 Clicks) - Current Auto Clicker Amount: " + autoAmount;
+                } else {
+                    return alert("You don't have enough clicks");
+                }
+            }
+
             function save() {
                 localStorage.setItem("count", count);
                 localStorage.setItem("x", x);
+                localStorage.setItem("autoClicker", autoAmount);
             }
 
             function load() {
@@ -57,6 +75,17 @@
                 x = localStorage.getItem("x");
                 x = parseInt(x);
                 document.getElementById("shop").innerHTML = "50 Clicks" + " - Current Click Multiplier: " + x;
+                autoAmount = localStorage.getItem("autoClicker");
+                autoAmount = parseInt(autoAmount);
+                document.getElementById("auto").innerHTML = "Auto Clicker(500 Clicks)" + " - Current Auto Clicker Amount: " + autoAmount;
+                if (autoAmount > 0) {
+                    for (i = autoAmount; i > 0; i--) {
+                        var autoClick = setInterval(function() {
+                            count ++;
+                            document.getElementById("count").innerHTML = "Count: " + count;
+                        }, 1000);
+                    }
+                }
             }
         </script>
     </body>
