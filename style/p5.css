@@ -9,3 +9,12 @@ img {
     width: 1241px;
     height: 900px;
 }
+
+p1 {
+    font-size: 30px;
+    color: red;
+}
+
+p {
+    font-size: 18px;
+}

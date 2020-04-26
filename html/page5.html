@@ -2,7 +2,7 @@
 <html>
     <title>Yue</title>
     <head><link rel="stylesheet" type="text/css" href="../style/p5.css"></head>
-    <body>
+    <body onload="once()">
         <nav>
             <ul>
                 <li><a href="../index.html">Main Page</a></li>
@@ -14,12 +14,50 @@
             </ul>
         </nav>
 
-        <p1>Yue is the best!</p1>
+        <p1 id="main" onclick="main()">Click Me</p1>
 
-        <img src="https://vignette.wikia.nocookie.net/arifureta-shokugyou-de-sekai-saikyou/images/5/57/Arifureta-LN-JP-v01-003.png/revision/latest?cb=20190329082228">
+        <p id="count"></p>
+
+        <p id="save" onclick="save()">Click to Save</p>
+
+        <p id="load" onclick="load()">Click to Load</p>
+
+        <p id="shop" onclick="buy()">50 Clicks</p>
 
         <script>
+            var count = 10;
+            var x = 1;
 
+            function main() {
+                count += x;
+                document.getElementById("count").innerHTML = "Count: " + count;
+            }
+
+            function buy() {
+                if (count >= 50)  {
+                    count -= 50;
+                    x += 1;
+                    document.getElementById("count").innerHTML = "Count: " + count;
+                    document.getElementById("shop").innerHTML = "50 Clicks" + " - Current Click Multiplier: " + x;
+                } else {
+                    alert("You Don't Have Enough Clicks.");
+                }
+            }
+
+            function save() {
+                localStorage.setItem("count", count);
+                localStorage.setItem("x", x);
+            }
+
+            function load() {
+                main();
+                count = localStorage.getItem("count");
+                count = parseInt(count);
+                document.getElementById("count").innerHTML = "Count: " + count;
+                x = localStorage.getItem("x");
+                x = parseInt(x);
+                document.getElementById("shop").innerHTML = "50 Clicks" + " - Current Click Multiplier: " + x;
+            }
         </script>
     </body>
 </html>
