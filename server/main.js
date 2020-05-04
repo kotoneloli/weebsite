@@ -1,8 +1,8 @@
-const WebSocketServer = require('ws').Server;
+const WebSocket = require('wss');
 const Session = require('./session');
 const Client = require('./client');
 
-const server = new WebSocketServer({port: 9000});
+const server = new WebSocket('wss://https://kotoneloli.github.io/weebsite/html/tetrisonline.html');
 
 const sessions = new Map;
 
