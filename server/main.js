@@ -1,4 +1,4 @@
-const WebSocketServer = require('wss');
+const WebSocketServer = require('ws');
 const Session = require('./session');
 const Client = require('./client');
 
