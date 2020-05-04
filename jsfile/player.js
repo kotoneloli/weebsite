@@ -82,6 +82,23 @@ class Player
         this.events.emit('pos', this.pos);
     }
 
+    dropInstant()
+    {
+        while (!this.arena.collide(this)) {
+            this.pos.y++;
+        }
+        this.dropCounter = 0;
+        if (this.arena.collide(this)) {
+            this.pos.y--;
+            this.arena.merge(this);
+            this.reset();
+            this.score += this.arena.sweep();
+            this.events.emit('score', this.score);
+            return;
+        }
+        this.events.emit('pos', this.pos);
+    }
+
     move(dir)
     {
         this.pos.x += dir;
