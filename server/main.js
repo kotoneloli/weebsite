@@ -1,4 +1,4 @@
-const WebSocketServer = require('wss').Server;
+const WebSocketServer = require('wss');
 const Session = require('./session');
 const Client = require('./client');
 
