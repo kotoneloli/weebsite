@@ -82,6 +82,18 @@ class Player
         this.events.emit('pos', this.pos);
     }
 
+    /*function playerDrop() {
+        player.pos.y++;
+        if (collide(arena, player)) {
+            player.pos.y--;
+            merge(arena, player);
+            playerReset();
+            arenaSweep();
+            updateScore();
+        }
+        dropCounter = 0;
+    }*/
+
     dropInstant()
     {
         while (!this.arena.collide(this)) {
